@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elegant Colorful Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f7f9fc;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(to right, #f2709c, #ff9472);
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      color: #fff;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    main {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    }
+h1{
+  color:#ffecd2;
+}
+    main h2 {
+      color: #3a0ca3;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    aside {
+      background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    aside h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #3a3a3a;
+    }
+
+    aside ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    aside li {
+      background: #ffffffdd;
+      padding: 0.8rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    aside li:hover {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: white;
+    }
+
+    footer {
+      background: linear-gradient(to right, #f2709c, #ff9472);
+      color: white;
+      text-align: center;
+      padding: 1.2rem;
+      margin-top: auto;
+    }
+
+    a {
+      color: #3a0ca3;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aurora Studio</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main>
+      <h2>Welcome to Aurora Studio</h2>
+      <p>This is the main content area. Here you can see articles, images, or anything else you want your visitors to see first.</p>
+       <p>Discover a vibrant mix of ideas, insights, and inspiration designed to spark your creativity and fuel your projects.</p>
+      <p>From deep-dive tutorials to hands-on experiments, we empower curious minds to build, create, and innovate with confidence.</p>
+      <p>Check our <a href="#">Blog</a> or explore the <a href="#">Portfolio</a>.</p>
+    </main>
+
+    <aside>
+      <h3>Quick Links</h3>
+      <ul>
+        <li>Latest Articles</li>
+        <li>Popular Tools</li>
+        <li>Join Newsletter</li>
+        <li>Community Forum</li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer>
+    &copy; 2025 Aurora Studio. All rights reserved.
+  </footer>
+</body>
+</html>
