@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Animated Button</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    .button-container {
+      position: relative;
+    }
+
+    .super-button {
+      position: relative;
+      padding: 18px 45px;
+      font-size: 20px;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background: linear-gradient(120deg, #00dbde, #fc00ff, #00dbde);
+      background-size: 300%;
+      transition: background-position 0.5s ease, transform 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4), 0 0 30px rgba(255, 0, 255, 0.3);
+      overflow: hidden;
+      z-index: 1;
+      animation: pulse-bounce 3s infinite;
+    }
+
+    .super-button:hover {
+      background-position: right center;
+      transform: scale(1.08);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(255, 0, 255, 0.4);
+    }
+
+    .super-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 300%;
+      height: 300%;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      opacity: 0;
+      transition: 0.6s;
+      z-index: 0;
+    }
+
+    .super-button:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    .super-button span {
+      position: relative;
+      z-index: 2;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    @keyframes pulse-bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-3px);
+      }
+    }
+
+    .glow-ring {
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+      border-radius: 60px;
+      background: conic-gradient(from 0deg, rgba(0,255,255,0.3), rgba(255,0,255,0.3), rgba(0,255,255,0.3));
+      filter: blur(30px);
+      opacity: 0.5;
+      animation: rotate-glow 6s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rotate-glow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .super-button:active::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      transform: translate(-50%, -50%) scale(1);
+      border-radius: 50%;
+      animation: ripple 0.4s ease-out forwards;
+      z-index: 1;
+    }
+
+    @keyframes ripple {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.3);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="button-container">
+    <div class="glow-ring"></div>
+    <button class="super-button"><span>LET'S GO!!</span></button>
+  </div>
+
+</body>
+</html>
