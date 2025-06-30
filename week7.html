@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Array & String Exercises</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    .output {
+      background: #f4f4f4;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-left: 4px solid #007bff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Array To String Conversion Using JavaScript</h1>
+
+  <div id="results"></div>
+
+  <script>
+    function display(title, value) {
+      const div = document.createElement('div');
+      div.className = 'output';
+      div.innerHTML = `<h2>${title}</h2><p>Output - ${value}</p>`;
+      document.getElementById('results').appendChild(div);
+    }
+
+    // Join all elements of an array into a string
+    const myColor = ["Red", "Green", "White", "Black"];
+    display("Joined with default separator", myColor.join());
+    display("Joined with comma", myColor.join(','));
+    display("Joined with plus", myColor.join('+'));
+
+    // Most frequent element in an array
+    const arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+    function mostFrequent(arr) {
+      const freq = {};
+      let max = 0, item;
+      for (let el of arr) {
+        freq[el] = (freq[el] || 0) + 1;
+        if (freq[el] > max) {
+          max = freq[el];
+          item = el;
+        }
+      }
+      return `${item} ( ${max} times )`;
+    }
+    display("Most Frequent Element", mostFrequent(arr1));
+
+    // Truncate a string
+    function truncateString(str, num) {
+      return str.slice(0, num);
+    }
+    display("Truncated 'Robin Singh' to 4 chars", truncateString("Robin Singh", 4));
+
+    // Capitalize each word in a string
+    function capitalizeWords(str) {
+      return str.split(' ').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');
+    }
+    display("Capitalize 'js string exercises'", capitalizeWords("js string exercises"));
+
+    // Filter elements between two values
+   function arrBetween(a, b, arr) {
+  return arr.filter(num => num > a && num < b);
+}
+display("arrBetween(3, 8, [1,5,95,0,4,7])", JSON.stringify(arrBetween(3, 8, [1, 5, 95, 0, 4, 7])));
+display("arrBetween(1, 10, [1,10,25,8,11,6])", JSON.stringify(arrBetween(1, 10, [1, 10, 25, 8, 11, 6])));
+display("arrBetween(7, 32, [1,2,3,78])", JSON.stringify(arrBetween(7, 32, [1, 2, 3, 78])));
+
+    // Find index of element in array
+    function findIndex(arr, val) {
+      return arr.indexOf(val);
+    }
+    display("Index of 'fgh' in [\"hi\", \"edabit\", \"fgh\", \"abc\"]", findIndex(["hi", "edabit", "fgh", "abc"], "fgh"));
+    display("Index of 'blue' in [\"Red\", \"blue\", \"Blue\", \"Green\"]", findIndex(["Red", "blue", "Blue", "Green"], "blue"));
+    display("Index of 'd' in [\"a\", \"g\", \"y\", \"d\"]", findIndex(["a", "g", "y", "d"], "d"));
+    display("Index of 'Pineapple' in [\"Pineapple\", \"Orange\", \"Grape\", \"Apple\"]", findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
+  </script>
+</body>
+</html>
